@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind + DaisyUI cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        *{
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+    <title>GitHub Issues Tracker</title>
+</head>
+<body class="bg-[#F8FAFC] pt-14 pb-14">
+    <section class="min-h-[84vh] max-w-md bg-[#ffffff] mx-auto rounded-xl shadow-md">
+
+        <div class="logo w-[100px] mx-auto pt-8">
+            <img src="./assets/github-logo.png" alt="">
+        </div>
+
+        <div class="text-content pt-6 text-center ">
+            <h2 class="font-semibold text-[24px] text-[#1F2937]">GitHub Issues Tracker</h2>
+            <p class="text-[#64748B] text-[16px]">Sign in to manage your issues</p>
+        </div>
+
+        <div class="form pt-3">
+            <div class="card bg-base-100 w-full max-w-md shrink-0 ">
+              <div class="card-body">
+                <fieldset class="fieldset">
+          <label class="label text-[#3D3746] font-medium text-[16px]">Username</label>
+          <input id="input-username" maxlength="5" minlength="5" type="text" class="input w-full" placeholder="Enter Username" />
+                    <div><p class="text-[#4A00FF] text-[14px]">Default: admin</p></div>
+
+
+          <label class="label text-[#3D3746] font-medium text-[16px]">Password</label>
+          <input id="input-pin" maxlength="8" minlength="8" type="text" class="input w-full" placeholder="Enter Password" />
+                  <div><p class="text-[#4A00FF] text-[14px]">Default: admin123</p></div>  
+                    
+          <button id="login-btn" class="btn btn-primary mt-4">Sign In</button>
+        </fieldset>
+      </div>
+        </div>
+        </div>
+
+    </section>
+
+
+    <script src="script/login.js"></script>
+</body>
+</html>
