@@ -47,7 +47,7 @@
     </header>
     
 
-    <section class="w-9/12 mx-auto my-10 space-y-6 ">
+    <section class="w-9/12 mx-auto mt-10 mb-0 space-y-6 ">
         <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
             <div class="flex gap-2">
             <button id="btn-all" class="btn btn-primary px-8">All</button>
@@ -56,12 +56,12 @@
             </div>
         </div>
 
-        <div class="bg-white rounded-xl overflow-hidden">
+        <div class="bg-white rounded-xl overflow-hidden  shadow-md">
 
             <div class="p-8 border-b border-gray-100">
                 <div class="flex justify-between items-center">
                 <div class="flex items-center gap-4">
-                    <div>
+                    <div class="bg-[#ECE4FF] p-3 rounded-full">
                         <img src="./assets/Aperture.png" alt="">
                     </div>
                     <div>
@@ -76,7 +76,7 @@
             </div>
             </div>
 
-            <div class="p-8 bg-[#FBFBFB] shadow-md">
+            <div class="p-8 bg-[#FBFBFB] min-h-[500px]">
                 <div id="loader" class="hidden flex justify-center my-10">
                 <span class="loading loading-spinner loading-lg text-primary"></span>
             </div>
@@ -86,6 +86,36 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Issue Modal -->
+<div id="issue-modal" class="modal">
+    <div class="modal-box max-w-2xl bg-white rounded-xl p-6">
+        <div class="mb-4">
+            <h3 id="modal-title" class="font-bold text-2xl mb-2"></h3>
+            <div class="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                <span id="modal-status-badge" class="px-3 py-1 rounded-full font-medium text-white"></span>
+                <span>• Opened by <span id="modal-author" class="font-semibold"></span></span>
+                <span>• <span id="modal-createdAt"></span></span>
+            </div>
+            <div class="flex gap-2 mb-2" id="modal-labels"></div>
+        </div>
+        <p id="modal-description" class="text-gray-700 mb-6"></p>
+        <div class="grid grid-cols-2 gap-4 bg-gray-50 p-4 rounded mb-4">
+            <div>
+                <p class="text-gray-500 text-sm">Assignee:</p>
+                <p class="font-semibold" id="modal-assignee"></p>
+            </div>
+            <div>
+                <p class="text-gray-500 text-sm">Priority:</p>
+                <span id="modal-priority-badge" class="px-3 py-1 rounded-full text-white font-semibold"></span>
+            </div>
+        </div>
+        <div class="modal-action">
+            <button class="btn btn-primary" id="close-modal">Close</button>
+        </div>
+    </div>
+</div>
 
     
     <script src="script/card.js"></script>

@@ -117,6 +117,11 @@ btnSearch.addEventListener('click', async () => {
 
     const searchText = inputSearch.value.trim();
 
+    document.querySelectorAll('#btn-all, #btn-open, #btn-closed').forEach(btn => {
+        btn.classList.remove('btn-primary');
+        btn.classList.add('btn-outline');
+    });
+
     if (!searchText) {
         loadIssues();
         return;
@@ -126,19 +131,12 @@ btnSearch.addEventListener('click', async () => {
     issueContainer.innerHTML = "";
 
     try {
-
         const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`);
-
         const result = await res.json();
-
         displayIssues(result.data);
-
     } catch (error) {
-
         console.log("Search error:", error);
-
     } finally {
-
         loader.classList.add('hidden');
     }
 
@@ -162,6 +160,7 @@ const handleButtonClick = (btnId, status) => {
 
     loadIssues(status);
 };
+
 
 
 document
