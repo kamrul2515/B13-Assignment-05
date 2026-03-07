@@ -1,24 +1,23 @@
-document.getElementById("login-btn")
-.addEventListener("click", function(){
-    // 1.get the username input
-    const usernameInput = document.getElementById("input-username");
-    const username = usernameInput.value;
-    console.log(username);
-    // 2. get the pin input
-    const inputPin = document.getElementById("input-pin");
-    const pin = inputPin.value;
-    console.log(pin);
-    // 3. match pin and username
-    if(username == "admin" && pin =="admin123"){
-        // true:::>> alert> homepage
-        alert("Login Successfull");
 
+const loginBtn = document.getElementById("login-btn");
+const usernameInput = document.getElementById("input-username");
+const pinInput = document.getElementById("input-pin");
+
+// Create error message element
+const formBody = document.querySelector(".card-body");
+const errorMsg = document.createElement("p");
+errorMsg.className = "text-red-500 text-sm mt-2 hidden";
+formBody.appendChild(errorMsg);
+
+loginBtn.addEventListener("click", function() {
+    const username = usernameInput.value.trim();
+    const pin = pinInput.value.trim();
+
+    if(username === "admin" && pin === "admin123") {
+        errorMsg.classList.add("hidden");
         window.location.assign("/home.html");
-
-    }
-    else{
-        // false:::>> alert> invalid
-        alert("Login Failed");
-        return;
+    } else {
+        errorMsg.innerText = "Invalid credentials. Please try again.";
+        errorMsg.classList.remove("hidden");
     }
 });
